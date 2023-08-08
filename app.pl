@@ -1,7 +1,10 @@
-import mojo from "@mojojs/core";
+use Mojolicious::Lite;
 
-const app = mojo();
+# Route for the home page
+get '/' => sub {
+    my $c = shift;
+    $c->render(text => 'Hello, World!');
+};
 
-app.get("/", ctx => ctx.render({text: "I <3 Mojo!"}));
-
-app.start();
+# Start the Mojolicious application
+app->start;
