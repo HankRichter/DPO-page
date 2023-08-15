@@ -3,11 +3,11 @@ use Mojolicious::Lite;
 use DBI;
 
 # Database configuration
-my $database = 'your_database_name';
-my $host     = 'localhost';
+my $database = 'dpo_page';
+my $host     = '127.0.0.1';
 my $port     = 3306;
-my $username = 'your_username';
-my $password = 'your_password';
+my $username = 'root';
+my $password = 'root';
 
 # Establish database connection
 my $dbh = DBI->connect(
@@ -21,7 +21,7 @@ get '/' => sub {
     my $c = shift;
 
     # Query the database
-    my $query = $dbh->prepare('SELECT * FROM your_table');
+    my $query = $dbh->prepare('SELECT *');
     $query->execute();
 
     # Fetch results
@@ -43,11 +43,11 @@ post '/submit' => sub {
     $c->render(json => { success => 1 });
 };
 
-#Route for the home page
-#get '/' => sub {
-    #my $c = shift;
-    #$c->render(text => 'Hello, World!');
-#};
+# Route for the home page
+# get '/' => sub {
+#     my $c = shift;
+#     $c->render(text => 'Hello, World!');
+# };
 
 
 # Start the Mojolicious application
