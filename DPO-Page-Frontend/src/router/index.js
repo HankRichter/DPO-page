@@ -1,11 +1,10 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import {createRouter, createWebHistory} from "vue-router";
 import Home from "../components/Home.vue";
 import Form from "../components/Form.vue";
 
-Vue.use(VueRouter);
-
-const routes = [
+const router = createRouter({ 
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
   {
     path: "/",
     component: Home,
@@ -14,12 +13,8 @@ const routes = [
     path: "/form",
     component: Form,
   },
-];
-
-const router = new VueRouter({
-  mode: "history",
-  routes,
-});
+]
+})
 
 export default router;
 
