@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"perl app.pl daemon\"  \"cd DPO-Page-Frontend && npm run dev\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mojojs/core": "^1.25.3"
+    "@mojojs/core": "^1.25.3",
+    "concurrently": "^8.2.0"
   }
 }
