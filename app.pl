@@ -32,16 +32,16 @@ get '/' => sub {
     $c->render(json => $results);
 };
 
-post '/submit' => sub {
-    my $c = shift;
+# post '/submit' => sub {
+#     my $c = shift;
 
-    # Get form data
-    my $name  = $c->param('name');
-    my $email = $c->param('email');
+#     # Get form data
+#     my $name  = $c->param('name');
+#     my $email = $c->param('email');
 
-    # Save data to the database or perform other operations
-    $c->render(json => { success => 1 });
-};
+#     # Save data to the database or perform other operations
+#     $c->render(json => { success => 1 });
+# };
 
 # Route for the home page
 # get '/' => sub {
